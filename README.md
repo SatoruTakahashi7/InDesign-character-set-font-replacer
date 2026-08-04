@@ -1,6 +1,6 @@
 # InDesign 文字セットの書体へ置換
 
-`Std / StdN / Pro / ProN / Pr5 / Pr6 / Pr6N / Max / MaxN`など、文字セットだけが異なる同系列の和文フォントへ置換するInDesign用JSXです。
+`Std / StdN / Pro / ProN / Pr5 / Pr6 / Pr6N`など、文字セットだけが異なる同系列の和文フォントへ置換するInDesign用JSXです。
 
 変換元フォントがインストールされていない文書にも対応し、本文・スタイル・合成フォントをまとめて処理できます。
 
