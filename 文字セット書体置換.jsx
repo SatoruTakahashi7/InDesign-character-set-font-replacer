@@ -1,7 +1,7 @@
 /*
 SCRIPTMETA-BEGIN
 Script-ID=com.gyahtei.dtp.replace-font-character-set.indesign
-Version=1.0.3
+Version=1.0.4
 Meta-URL=https://github.com/SatoruTakahashi7/InDesign-character-set-font-replacer
 Target-App=indesign
 Name=文字セットの書体へ置換 / Replace Fonts by Character Set
@@ -16,7 +16,7 @@ SCRIPTMETA-END
 
     文字セット書体置換.jsx
 
-    Version: 1.0.3
+    Version: 1.0.4
     Updated: 2026-08-04
     GYAHTEI Design Laboratory
     @gyahtei_satoru
@@ -34,7 +34,7 @@ SCRIPTMETA-END
     ・合成フォント内の各構成書体
 
     対応する文字セット表記
-    Std / StdN / Pro / ProN / Pr5 / Pr6 / Pr6N / Max / MaxN
+    Std / StdN / Pro / ProN / Pr5 / Pr5N / Pr6 / Pr6N
 
     操作
     1. InDesignで対象ドキュメントを開きます。
@@ -65,9 +65,11 @@ SCRIPTMETA-END
 
 (function () {
     var SCRIPT_NAME = "文字セットの書体へ置換";
-    var SCRIPT_VERSION = "v1.0.3";
-    var CHARACTER_SETS = ["Std", "StdN", "Pro", "ProN", "Pr5", "Pr6", "Pr6N", "Max", "MaxN"];
-    var DETECTION_ORDER = ["Pr6N", "MaxN", "ProN", "StdN", "Pr6", "Pr5", "Max", "Pro", "Std"];
+    var SCRIPT_VERSION = "v1.0.4";
+    var CHARACTER_SETS = ["Std", "StdN", "Pro", "ProN", "Pr5", "Pr5N", "Pr6", "Pr6N"];
+    // 長い表記を先に判定し、Pr5NをPr5、Pr6NをPr6として誤認しないようにします。
+    // Max / MaxNは文字セット名ではなく「最大候補を選ぶ」プリセット名のため対象外です。
+    var DETECTION_ORDER = ["Pr6N", "Pr5N", "ProN", "StdN", "Pr6", "Pr5", "Pro", "Std"];
 
     function main() {
         if (app.documents.length === 0) {
@@ -763,7 +765,7 @@ SCRIPTMETA-END
     function buildNoCandidateMessage(sourceData) {
         if (sourceData.list.length === 0) {
             return "対応する文字セット表記を持つ使用フォントが見つかりませんでした。\n\n" +
-                "対応表記：Std / StdN / Pro / ProN / Pr5 / Pr6 / Pr6N / Max / MaxN";
+                "対応表記：Std / StdN / Pro / ProN / Pr5 / Pr5N / Pr6 / Pr6N";
         }
         return "同じ書体系列・同じスタイルの変換候補が見つかりませんでした。\n\n" +
             "変換先フォントがインストールされているか確認してください。";
