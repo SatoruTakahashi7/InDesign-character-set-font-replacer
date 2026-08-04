@@ -1,7 +1,7 @@
 /*
 SCRIPTMETA-BEGIN
 Script-ID=com.gyahtei.dtp.replace-font-character-set.indesign
-Version=1.0.2
+Version=1.0.3
 Meta-URL=https://github.com/SatoruTakahashi7/InDesign-character-set-font-replacer
 Target-App=indesign
 Name=文字セットの書体へ置換 / Replace Fonts by Character Set
@@ -16,8 +16,8 @@ SCRIPTMETA-END
 
     文字セット書体置換.jsx
 
-    Version: 1.0.2
-    Updated: 2026-08-03
+    Version: 1.0.3
+    Updated: 2026-08-04
     GYAHTEI Design Laboratory
     @gyahtei_satoru
     Developed with ChatGPT
@@ -52,6 +52,9 @@ SCRIPTMETA-END
     ・ロックされたテキストや編集できない合成フォント項目などは変更できない場合があります。
     ・処理は原則として「編集 ＞ 取り消し」1回で戻せます。
     ・実行前に保存し、最初は複製ドキュメントで確認してください。
+    ・本スクリプトの使用は、利用者自身の責任で行ってください。
+    ・本スクリプトの使用により生じたデータ損失、文字化け、レイアウト崩れ、
+      その他一切の損害について、制作者・提供者は責任を負いません。
 
     Credits:
     - Planning / testing / direction: GYAHTEI Design Laboratory @gyahtei_satoru
@@ -62,7 +65,7 @@ SCRIPTMETA-END
 
 (function () {
     var SCRIPT_NAME = "文字セットの書体へ置換";
-    var SCRIPT_VERSION = "v1.0.2";
+    var SCRIPT_VERSION = "v1.0.3";
     var CHARACTER_SETS = ["Std", "StdN", "Pro", "ProN", "Pr5", "Pr6", "Pr6N", "Max", "MaxN"];
     var DETECTION_ORDER = ["Pr6N", "MaxN", "ProN", "StdN", "Pr6", "Pr5", "Max", "Pro", "Std"];
 
