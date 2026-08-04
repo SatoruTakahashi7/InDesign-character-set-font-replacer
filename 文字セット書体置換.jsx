@@ -68,7 +68,6 @@ SCRIPTMETA-END
     var SCRIPT_VERSION = "v1.0.4";
     var CHARACTER_SETS = ["Std", "StdN", "Pro", "ProN", "Pr5", "Pr5N", "Pr6", "Pr6N"];
     // 長い表記を先に判定し、Pr5NをPr5、Pr6NをPr6として誤認しないようにします。
-    // Max / MaxNは文字セット名ではなく「最大候補を選ぶ」プリセット名のため対象外です。
     var DETECTION_ORDER = ["Pr6N", "Pr5N", "ProN", "StdN", "Pr6", "Pr5", "Pro", "Std"];
 
     function main() {
