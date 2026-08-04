@@ -16,7 +16,7 @@ SCRIPTMETA-END
 
     文字セット書体置換.jsx
 
-    Version: 1.0.4
+    Version: 1.0.4 
     Updated: 2026-08-04
     GYAHTEI Design Laboratory
     @gyahtei_satoru
